@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "budo index.js:bundle.js --live -- -t [ babelify --presets [ es2015 ] ]",
-    "build": "browserify index.js -o bundle.js --standalone Space2D -t [ babelify --presets [ es2015 ] ]"
+    "build": "browserify index.js -o bundle.js --standalone Space2D -t [ babelify --presets [ es2015 ] ]",
+    "build-release": "browserify index.js -o space2d.js --standalone Space2D -t [ babelify --presets [ es2015 ] ] && uglifyjs space2d.js -o space2d.min.js"
   },
   "author": "Rye Terrell",
   "license": "Unlicense",
@@ -14,6 +15,7 @@
     "babel-preset-es2015": "^6.13.2",
     "browserify": "^13.1.1",
     "babelify": "^7.3.0",
+    "uglify-js": "^2.7.4",
     "deepmerge": "^1.2.0",
     "regl": "^1.2.1",
     "gl-vec2": "^1.0.0",
