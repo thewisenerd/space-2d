@@ -16,11 +16,11 @@ modified demo [here](https://thewisenerd.github.io/space-2d).
 usage
 -----
 
-generic template.
+generic template. get ```space2d.min.js``` from [here](https://raw.githubusercontent.com/thewisenerd/space-2d/gh-pages/space2d.min.js).
 
 ```javascript
   <canvas id='render-canvas'></canvas>
-  <script src="bundle.js"></script>
+  <script src="space2d.min.js"></script>
   <script>
     var canvas = document.getElementById('render-canvas');
     canvas.width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
