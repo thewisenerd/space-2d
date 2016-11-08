@@ -49,7 +49,7 @@ export default class Scene {
 
     let rand = random.rand(props.seed, 0);
     if (props.renderPointStars) {
-      let data = pointStars.generateTexture(width, height, 0.05, 0.125, rand.random.bind(rand));
+      let data = pointStars.generateTexture(width, height, props.advanced.stars.density, props.advanced.stars.brightness, rand.random.bind(rand));
       this.pointStarTexture({
         format: 'rgb',
         width: width,
@@ -75,8 +75,8 @@ export default class Scene {
         offset: [rand.random() * 100, rand.random() * 100],
         scale: (rand.random() * 2 + 1) / scale,
         color: [rand.random(), rand.random(), rand.random()],
-        density: rand.random() * 0.2,
-        falloff: rand.random() * 2.0 + 3.0,
+        density: rand.random() * (props.advanced.nebula.densityTo - props.advanced.nebula.densityFrom) + props.advanced.nebula.densityFrom,
+        falloff: rand.random() * (props.advanced.nebula.falloffTo - props.advanced.nebula.falloffFrom) + props.advanced.nebula.falloffFrom,
         width: width,
         height: height,
         viewport: viewport
@@ -107,7 +107,7 @@ export default class Scene {
       sunOut = starOut === pong ? ping : pong;
       this.starRenderer({
         center: [rand.random(), rand.random()],
-        coreRadius: rand.random() * 0.025 + 0.025,
+        coreRadius: rand.random() * (props.advanced.sun.coreRadiusTo - props.advanced.sun.coreRadiusFrom) + props.advanced.sun.coreRadiusFrom,
         coreColor: [1,1,1],
         haloColor: [rand.random(), rand.random(), rand.random()],
         haloFalloff: rand.random() * 32 + 32,
