@@ -1,0 +1,21 @@
+{
+  "name": "space-2d",
+  "version": "0.0.1",
+  "description": "generate space-2d on a canvas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "budo index.js:bundle.js --live -- -t [ babelify --presets [ es2015 ] ]",
+    "build": "browserify index.js -o bundle.js -t [ babelify --presets [ es2015 ] ]"
+  },
+  "author": "Rye Terrell",
+  "license": "Unlicense",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.13.2",
+    "browserify": "^13.1.1",
+    "babelify": "^7.3.0",
+    "regl": "^1.2.1",
+    "gl-vec2": "^1.0.0",
+    "rng": "^0.2.2"
+  }
+}
