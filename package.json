@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "budo index.js:bundle.js --live -- -t [ babelify --presets [ es2015 ] ]",
-    "build": "browserify index.js -o bundle.js -t [ babelify --presets [ es2015 ] ]"
+    "build": "browserify index.js -o bundle.js --standalone Space2D -t [ babelify --presets [ es2015 ] ]"
   },
   "author": "Rye Terrell",
   "license": "Unlicense",
