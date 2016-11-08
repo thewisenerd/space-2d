@@ -1,19 +1,28 @@
 <html>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+  </style>
   <body>
 
     <canvas id='render-canvas'></canvas>
     <script src="bundle.js"></script>
     <script>
       var canvas = document.getElementById('render-canvas');
-      canvas.width = window.innerWidth - (300 + 16 + 16 + 16);;
-      canvas.height = window.innerHeight - (16 + 16);
+      canvas.width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+      canvas.height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
       var props = {
         renderPointStars: true,
         renderStars: true,
-        renderSun: true,
+        renderSun: false,
         renderNebulae: true,
-        shortScale: false
+        shortScale: true,
+        advanced: {
+
+        }
       };
 
       var space2d = Space2D.init(canvas, props);
