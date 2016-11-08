@@ -20,6 +20,17 @@
         renderSun: true,
         renderNebulae: true,
         shortScale: true,
+        advanced: {
+          stars: {
+            brightness: 0.075,
+            density: 0.05,
+          },
+          nebula: {
+            densityTo: 0.2,
+            falloffFrom: 5,
+            falloffTo: 7,
+          }
+        }
       };
 
       var space2d = Space2D.init(canvas, props);
